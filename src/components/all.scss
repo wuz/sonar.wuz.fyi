@@ -1,0 +1,85 @@
+/* THIRD PARTY */
+@import url("https://fonts.googleapis.com/css?family=DM+Serif+Display|Open+Sans|Source+Sans+Pro&display=swap");
+
+/* SETTINGS */
+
+// Colors
+$colors: (
+  "parchment": #f9f8eb
+);
+
+// Spacing
+
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// Widths
+
+$navbar-width: 72px;
+
+/* TOOLS */
+
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+/* GENERIC */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  background-color: color("parchment");
+  padding-left: $navbar-width;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display";
+}
+
+/* COMPONENTS */
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  width: $navbar-width;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  padding: $spacing-sm;
+
+  .Navbar-top {
+    width: 100%;
+  }
+
+  .Navbar-middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.MainPage {
+  padding: $spacing-lg;
+}
+
+/* UTILITIES */
